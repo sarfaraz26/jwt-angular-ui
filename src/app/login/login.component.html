@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>LOGIN</h1>
+    <form #form="ngForm" (ngSubmit)="login(form)">
+      <label for="">Username</label>
+      &nbsp;
+      <input type="text" name="username" id="username" name="username" [(ngModel)]="username" required minlength="2">
+      <!-- <br>
+      <small style="color: red;">Name is required</small>
+      <br>
+      <small style="color: red;">Min length is 2</small> -->
+      <br><br>
+      <label for="">Password</label>
+      &nbsp;  
+      <input type="password" name="password" id="password" name="password" [(ngModel)]="password" required minlength="2">
+      <!-- <br>
+      <small style="color: red;">Password is required</small>
+      <br>
+      <small style="color: red;">Min length is 2</small> -->
+      <br><br>
+      <button type="submit" [disabled]="form.invalid">Log in</button>
+    </form>
+  </div>
+  
