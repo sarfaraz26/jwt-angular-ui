@@ -1,4 +1,5 @@
-<a routerLink="/user/admin">Admin</a>
+<a routerLink="/user/admin" *ngIf="this.service.role == 'Admin'">Admin</a>
 &nbsp;
 <button type="button" style="color: red;" (click)="logout()">Logout</button>
 <h1>Welcome to Profile</h1>
+<p>{{ this.service.username }}</p>

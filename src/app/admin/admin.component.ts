@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit{
 
-  constructor(private router : Router)
+  ngOnInit(): void {
+    this.service.assignValues();
+  }
+
+  constructor(private router : Router, public service : AuthService)
   {
 
   }
@@ -16,6 +21,7 @@ export class AdminComponent {
   logout()
   {
     localStorage.removeItem('token');
+    this.service.role = "";
     this.router.navigate([''])
   }
 }
